@@ -33,7 +33,6 @@ def main
     print "Output: #{d}\n"
 
     puts "\nmax[min(a,b), min(c,d)] = #{max(min(a,b), min(c,d))}"
-
 end
 
 main
