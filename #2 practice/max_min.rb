@@ -3,7 +3,7 @@ def input_number(message)
         print "\nInput number #{message} > "
         input = gets
         return nil if input.nil?
-        return Float(input.strip)
+        return Float(input)
         rescue 
             puts "Error! Please, repeat!"
     end
