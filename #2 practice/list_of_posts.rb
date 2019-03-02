@@ -52,16 +52,16 @@ end
 
 def input_date
     name = input_string("\nFirst name and Last name")
-    puts "Input: #{name}"
+    puts "Output: #{name}"
     
     email = input_string("\nEmail")
-    puts "Input: #{email}"
-    
+    puts "Output: #{email}"
+
     age = check_age(input_number("\nAge"))
-    puts "Input: #{age}"
+    puts "Output: #{age}"
     
     work_exp = input_number("\nWork experience")
-    puts "Input: #{work_exp}"
+    puts "Output: #{work_exp}"
 
     list_of_posts(name, email, age, work_exp)
 end
