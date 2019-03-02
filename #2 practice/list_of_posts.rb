@@ -50,7 +50,7 @@ def list_of_posts(name, email, age, work_exp)
     puts "Стажёр" if work_exp < 2
 end
 
-def input_date
+def date_input
     name = input_string("\nFirst name and Last name")
     puts "Output: #{name}"
     
@@ -66,4 +66,4 @@ def input_date
     list_of_posts(name, email, age, work_exp)
 end
 
-input_date
+date_input
