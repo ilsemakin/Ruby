@@ -36,7 +36,7 @@ def check_work_exp(work_exp)
         return "заслуженный"
     elsif work_exp > 5
         return "известный"
-    else return nil
+    else return ""
     end
 end
 
