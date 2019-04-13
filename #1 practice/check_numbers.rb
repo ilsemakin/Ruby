@@ -1,21 +1,22 @@
-count_success, count_error, number = 0, 0, 99.999
+count_success = 0
+count_error = 0
+number = 99.999
 
-while true
+loop do
+  print '> '
+  line = gets
 
-    print "> "
-    line = gets.chomp
+  break if line.nil?
+  break if line.to_f == number
 
-    break if line.to_f == number
+  if line.strip.to_i <= 0 || line.strip.to_i.to_s != line.strip
+    print 'Input error! Try again! '
+    count_error += 1
+    next
+  end
 
-    if(line.to_i <= 0 || line.to_i.to_s != line)
-        print "\tInput error, repeat "
-        count_error+=1
-        next
-    end
-
-    puts "\tSuccess! Input number: #{line.to_i}"
-    count_success+=1
-
+  puts "\nSuccess! Input number: #{line.to_i}"
+  count_success += 1
 end
 
 puts "\nCount of successful cases: #{count_success}"
