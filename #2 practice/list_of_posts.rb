@@ -1,69 +1,73 @@
+# frozen_string_literal: true
+
 def input_string(messege)
-    loop do
-        print "#{messege} > "
-        input = gets
-        return nil if input.nil?
-        if input.strip.empty?
-            puts "Empty line! Please, repeat!"
-            next
-        end
-        return input.strip.downcase
+  loop do
+    print "#{messege} > "
+    input = gets
+    return nil if input.nil?
+
+    if input.strip.empty?
+      puts 'Empty line! Please, repeat!'
+      next
     end
+
+    string = input.strip.downcase
+    puts "Result : #{string}"
+    return string
+  end
 end
 
 def input_number(messege)
-    loop do
-        print "#{messege} > "
-        input = gets
-        return nil if input.nil?
-        return Integer(input) if Integer(input) > 0
-        puts "Error, non positive number! Please, repeat!"
-        rescue ArgumentError => _exception
-            puts "Error, please repeat!"
-    end
+  loop do
+    print "#{messege} > "
+    input = gets
+    return nil if input.nil?
+
+    number = Integer(input)
+    puts "Result : #{number}"
+    return number if number.positive?
+
+    puts 'Error, non positive number! Try again!'
+
+  rescue ArgumentError => _exception
+    puts 'Try again!'
+  end
 end
 
 def check_age(age)
-    until age >= 15 && age <= 100
-        puts "Invalid age!"
-        age = input_number("\nAge")
-    end
-    return age
+  until age >= 15 && age <= 100
+    puts 'Invalid age!'
+    age = input_number("\nAge")
+  end
+  age
 end
 
 def check_work_exp(work_exp)
-    if work_exp > 15
-        return "заслуженный"
-    elsif work_exp > 5
-        return "известный"
-    else return ""
-    end
+  if work_exp > 15
+    'honored'
+  elsif work_exp > 5
+    'famous'
+  else ''
+  end
 end
 
 def list_of_posts(name, email, age, work_exp)
-    print "\n\nList of posts:\n"
-    result = check_work_exp(work_exp)
+  print "\n\nList of posts:\n"
+  result = check_work_exp(work_exp)
 
-    puts "Руководитель #{result}" if name.eql?("petr petrovich")
-    puts "Бывалый #{result}" if age >= 45 && age <= 60
-    puts "Инженер #{result}" if email.include?("code")
-    puts "Стажёр" if work_exp < 2
+  puts "Head #{result}" if name.eql?('petr petrovich')
+  puts "Experienced #{result}" if age >= 45 && age <= 60
+  puts "Engineer #{result}" if email.include?('code')
+  puts 'Trainee' if work_exp < 2
 end
 
 def date_input
-    name = input_string("\nFirst name and Last name")
-    puts "Output: #{name}"
-    
-    email = input_string("\nEmail")
-    puts "Output: #{email}"
+  name = input_string("\nFirst name and Last name")
+  email = input_string("\nEmail")
+  age = check_age(input_number("\nAge"))
+  work_exp = input_number("\nWork experience")
 
-    age = check_age(input_number("\nAge"))
-    puts "Output: #{age}"
-    
-    work_exp = input_number("\nWork experience")
-    puts "Output: #{work_exp}"
-
-    list_of_posts(name, email, age, work_exp)
+  list_of_posts(name, email, age, work_exp)
 end
 
 date_input
