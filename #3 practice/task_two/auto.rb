@@ -1,5 +1,7 @@
-class Auto
+# frozen_string_literal: true
 
+# create auto
+class Auto
   attr_reader :brand, :model, :gasoline_consumption
 
   def initialize(brand, model, manifacture_year, gasoline_consumption)
@@ -10,6 +12,9 @@ class Auto
   end
 
   def to_s
-    "Brand:#{@brand} | Model:#{@model} | Manifacture_year:#{@manifacture_year} | Gasoline_consumption:#{@gasoline_consumption}"
+    "Brand:#{@brand}" \
+      "Model:#{@model}" \
+      "Manifacture_year:#{@manifacture_year}" \
+      "Gasoline_consumption:#{@gasoline_consumption}"
   end
 end

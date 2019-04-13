@@ -1,26 +1,29 @@
+# frozen_string_literal: true
+
+# create park for auto
 class Fleet
   def initialize
     @cars = []
   end
 
   def add(car)
-      @cars.push(car)
+    @cars.push(car)
   end
-  
+
   def average_consumption
     sum_gasoline = 0
     @cars.each do |car|
       sum_gasoline += car.gasoline_consumption
     end
 
-    Float(sum_gasoline/@cars.size)
+    Float(sum_gasoline / @cars.size)
   end
 
   def number_by_brand(brand)
     count = 0
 
     @cars.each do |car|
-      count+=1 if brand == car.brand 
+      count += 1 if brand == car.brand
     end
 
     count
@@ -30,7 +33,7 @@ class Fleet
     count = 0
 
     @cars.each do |car|
-      count+=1 if model == car.model
+      count += 1 if model == car.model
     end
 
     count
