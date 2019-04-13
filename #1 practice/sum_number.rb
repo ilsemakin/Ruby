@@ -1,20 +1,20 @@
-sum, string = 0, "over"
+sum = 0
+string = 'over'
 
-while true
+loop do
+  print '> '
+  line = gets
 
-    print "> "
-    line = gets.chomp
+  break if line.nil?
+  break if line.strip == string
 
-    break if line.strip == string
+  if line.to_f.zero?
+    print 'Input error! Try again!'
+    next
+  end
 
-    if(line.to_f == 0)
-        print "\tInput error, repeat "
-        next
-    end
-
-    puts "\tInput number: #{line.to_f}"
-    puts "\tCurrent sum: #{sum += line.to_f}"
-
+  puts "\nInput number: #{line.to_f}"
+  puts "Current sum: #{sum += line.to_f}"
 end
 
-puts "\n #{sum}"
+puts "\nAll sum: #{sum}"
