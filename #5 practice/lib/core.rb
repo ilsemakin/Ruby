@@ -13,9 +13,8 @@ class Core
   end
 
   def run
-    input = Input.new
     loop do
-      case input.choose(@commands)
+      case Input.choose(@commands)
       when 0
         help
       when 1

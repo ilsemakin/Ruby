@@ -2,7 +2,7 @@
 
 # input data
 class Input
-  def input_number(message)
+  def self.number(message)
     loop do
       print message
       line = gets
@@ -15,9 +15,9 @@ class Input
     end
   end
 
-  def choose(commands)
+  def self.choose(commands)
     loop do
-      index = input_number("\nInput number of command > ")
+      index = number("\nInput number of command > ")
       commands.each_key { |key| return index if index == key }
       puts 'Invalid command! Try again!'
     end
