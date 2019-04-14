@@ -2,29 +2,25 @@
 
 require_relative 'input'
 require_relative 'travel_agency'
+
 # scan commands
 class Core
   include Input
   def initialize
     @travel_agency = Input.read_files
-    @commands = { 'show_tours' => :show_tours, 'show_tourists' => :show_tourists,
-                  'add_tour' => :add_tour, 'add_tourist' => :add_tourist,
-                  'delete_tour' => :delete_tour, 'delete_tourist' => :delete_tourist,
-                  'tours_for_tourist' => :tours_for_tourist, 'tour_place' => :tour_place,
-                  'tour_sight' => :tour_sight, 'tour_price' => :tour_price,
-                  'tourists_for_tour' => :tourists_for_tour, 'groups' => :groups,
-                  'help' => :help, 'exit' => :exit }
+    @commands = { 1 => :show_tours, 2 => :show_tourists,
+                  3 => :add_tour, 4 => :add_tourist,
+                  5 => :delete_tour, 6 => :delete_tourist,
+                  7 => :tours_for_tourist, 8 => :tour_place,
+                  9 => :tour_sight, 10 => :tour_price,
+                  11 => :tourists_for_tour, 12 => :groups,
+                  0 => :help, 100 => :exit }
     help
   end
 
   def start
     loop do
-      line = Input.string('Input command > ')
-      return nil if line.nil?
-
-      command = @commands[line]
-      send(command) if !command.nil?
-      puts 'Invalid command! Try again!' if command.nil?
+      send(Input.command(@commands))
     end
   end
 
@@ -124,6 +120,6 @@ class Core
   end
 
   def help
-    @commands.each { |key, _value| puts key }
+    @commands.each { |key, command| puts "#{key} - #{command}" }
   end
 end
