@@ -1,0 +1,45 @@
+- place: Kazan
+  sights:
+    - Markiz 
+    - Kul_Sharif
+    - Kaz
+  days : 10
+  price: 3000
+  transport: train
+  tourists: 10
+- place: Kazan
+  sights:
+    - Markiz 
+    - Kul_Sharif
+    - Kaz
+  days : 10
+  price: 2000
+  transport: train
+  tourists: 10
+- place: Kazan
+  sights:
+    - Markiz 
+    - Kul_Sharif
+    - Kaz
+  days : 10
+  price: 4000
+  transport: train
+  tourists: 10
+- place: Moscow
+  sights: 
+    - Red_Square
+    - Gorky_Park
+    - The_Tsar_Bell
+  days : 5
+  price: 6000
+  transport: plane
+  tourists: 17
+- place: Moscow
+  sights: 
+    - Red_Square
+    - Gorky_Park
+    - The_Tsar_Bell
+  days : 5
+  price: 30000
+  transport: plane
+  tourists: 17

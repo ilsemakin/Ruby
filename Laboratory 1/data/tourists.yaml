@@ -1,0 +1,32 @@
+- name: Ilya
+  surname: Semakin
+  middle_name : Dmitrievich
+  place : Moscow 
+  sight: Red_Square
+  transport: plane
+  min: 2000
+  max: 6000
+- name: Ilya
+  surname: Ivanov
+  middle_name : Dmitrievich
+  place : Moscow 
+  sight: Red_Square
+  transport: plane
+  min: 2000
+  max: 6000
+- name: Ivan
+  surname: Petr
+  middle_name : Andreevich
+  place: Kazan
+  sight: Kul_Sharif
+  transport: train
+  min: 3000
+  max: 5000
+- name: Ivan
+  surname: Petrov
+  middle_name : Andreevich
+  place: Kazan
+  sight: Kul_Sharif
+  transport: train
+  min: 3000
+  max: 5000
