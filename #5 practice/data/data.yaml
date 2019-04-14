@@ -25,4 +25,3 @@ courses:
         grade: 5.1
       - student_id: 2
         grade: 5.2
-  - name: Computer Science
