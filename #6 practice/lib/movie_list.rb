@@ -2,7 +2,7 @@
 require 'csv'
 require_relative 'movie'
 
-# creating list of movies
+# processing list of movies
 class MovieList
     def initialize
         @movies = []
