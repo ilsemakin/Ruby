@@ -5,8 +5,8 @@ require_relative 'movie_list'
 class RatingCreator
     def create
         arg = ARGV
-        error('Invalid number of arguments') if arg.size < 2
-        error('file no exist!') unless File.exist?(arg[0]) || File.exist?(arg[1])
+        error('Invalid number of arguments!') if arg.size < 2
+        error('File no exist!') unless File.exist?(arg[0]) && File.exist?(arg[1])
         
         movie_list = MovieList.new
         movie_list.read_data(arg[0])
