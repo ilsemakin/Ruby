@@ -80,6 +80,14 @@ module Input
     end
   end
 
+  def self.command(commands)
+    loop do
+      id = Integer(Input.number("\nInput command > "))
+      commands.each { |index, command| return command if id == index }
+      puts 'Invalid command! Try again!'
+    end
+  end
+
   def self.read_files
     travel_agency = TravelAgency.new
     return travel_agency if !File.exist?(TOURS) || !File.exist?(TOURISTS)
