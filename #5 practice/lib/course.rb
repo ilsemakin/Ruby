@@ -1,11 +1,19 @@
-class Course
-  attr_reader :name_course
+# frozen_string_literal: true
 
-  def initialize(name_course)
-    @name_course = name_course
+# creating one course
+class Course
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+    @students = {}
   end
 
-  def marks(student, mark)
-    test = Hash.new()
+  def student_mark(student, mark)
+    @students[student] = mark
+  end
+
+  def each
+    @students.each { |key, value| yield(key, value) }
   end
 end
