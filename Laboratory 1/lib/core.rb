@@ -114,8 +114,7 @@ class Core
     groups.each_with_index do |group, index|
       puts index + 1
       puts 'Empty group!' if group.empty?
-
-      group.each { |tourist| puts tourist }
+      puts group
     end
   end
 
