@@ -5,6 +5,7 @@ require_relative 'movie'
 
 # processing list of movies
 class MovieList
+  include Enumerable
   def initialize
     @movies = []
   end
@@ -20,5 +21,9 @@ class MovieList
     File.open(file_output, 'w') do |file|
       @movies.sort!.each { |movie| file.write("#{movie} | #{movie.ogon_rating}\n") }
     end
+  end
+
+  def each
+    @movies.each { |movie| yield movie }
   end
 end
