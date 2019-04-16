@@ -24,7 +24,7 @@ class RatingCreator
   end
 
   def list_movies(movie_list)
-    movie_list.each_with_index {|movie, index| puts "#{index + 1} - #{movie}"}
+    movie_list.each_with_index { |movie, index| puts "#{index + 1} - #{movie}" }
   end
 
   def error(message)
