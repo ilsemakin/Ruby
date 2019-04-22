@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 
-
-# 1
+# calculator
 class Calculator
   def calc
     error('Error in numbers of arguments') if ARGV.size != 1
